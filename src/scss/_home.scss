@@ -4,7 +4,7 @@
 
   // Title
   &__title {
-    margin-top: 60px;
+    //margin-top: 60px;
     font-family: $title-font;
     color: $black-color;
     font-weight: bold;
@@ -14,5 +14,61 @@
     text-transform: uppercase;
     height: 75px;
     overflow: hidden;
+  }
+
+  // Buttons (More info && Watch video)
+  &__buttons {
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+    
+    &_item {
+      flex-basis: 50%;
+
+      &:first-child {
+        padding-left: 20px;
+      }
+    }
+
+    &_link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    &_text {
+      font-family: $title-font;
+      color: $black-color;
+      font-size: 18px;
+      margin-left: 15px;
+    }
+  }
+
+  // Mockup
+  &__mockup {
+    position: relative;
+    //background-image: url('../img/mockup.svg');
+    //background-position: 0 0;
+    //background-repeat: no-repeat;
+    width: 280px;
+    //height: 504px;
+    //-webkit-background-size: cover;
+    //background-size: cover;
+    
+    &_img {
+      width: 280px;
+      z-index: 2;
+      position: relative;
+    }
+
+    &_img-back {
+      width: 249px;
+      position: absolute;
+      z-index: 1;
+      right: 16px;
+      top: 0;
+    }
   }
 }

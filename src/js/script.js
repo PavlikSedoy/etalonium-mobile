@@ -97,3 +97,18 @@ window.onload = function () {
     console.log('test');
     var messenger = new Messenger(document.getElementById('home-title'));
 }
+
+// var file = document;
+// var size = file.getsize(); // file size
+//
+// function timeout_trigger() {
+//     var loaded = file.getLoaded(); // loaded part
+//     p = parseInt(loaded / size);
+//
+//     // $(".progress").css("max-width",p+"%");
+//     $(".progress-view").text(p+"%");
+//     if(p!=100) {
+//         setTimeout('timeout_trigger()', 20);
+//     }
+// }
+// timeout_trigger();
