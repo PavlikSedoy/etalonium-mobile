@@ -1,0 +1,18 @@
+.home {
+  position: relative;
+  padding: 60px 10px 40px 10px;
+
+  // Title
+  &__title {
+    margin-top: 60px;
+    font-family: $title-font;
+    color: $black-color;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 1.8;
+    text-align: center;
+    text-transform: uppercase;
+    height: 75px;
+    overflow: hidden;
+  }
+}
