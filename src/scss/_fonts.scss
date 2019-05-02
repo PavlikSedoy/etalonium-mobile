@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-Regular.eot');
+    src: url('../fonts/Montserrat/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Montserrat/Montserrat-Regular.svg#Roboto-Regular') format('svg'),
+    url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'),
+    url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
+    url('../fonts/Montserrat/Montserrat-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('../fonts/Graphik/Graphik-Regular-Web.eot');
+    src: url('../fonts/Graphik/Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Graphik/Graphik-Regular-Web.ttf') format('truetype'),
+    url('../fonts/Graphik/Graphik-Regular-Web.woff') format('woff'),
+    url('../fonts/Graphik/Graphik-Regular-Web.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('../fonts/Graphik/Graphik-Bold-Web.eot');
+    src: url('../fonts/Graphik/Graphik-Bold-Web.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Graphik/Graphik-Bold-Web.ttf') format('truetype'),
+    url('../fonts/Graphik/Graphik-Bold-Web.woff') format('woff'),
+    url('../fonts/Graphik/Graphik-Bold-Web.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}

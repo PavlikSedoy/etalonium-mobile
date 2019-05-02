@@ -1,5 +1,17 @@
+@import "fonts";
 @import "settings";
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
 body {
-    background-color: $color-bg;
+    background-color: $layout-bg;
+    font-family: $paragraph-font;
 }
