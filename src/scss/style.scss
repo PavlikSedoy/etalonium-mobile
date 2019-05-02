@@ -26,7 +26,55 @@ main {
     padding-bottom: 40px;
 }
 
+// Transition title
+.transition-title {
+    width: 100%;
+    background-color: $black-color;
+    color: $white-color;
+    font-family: $title-font;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.88;
+    padding: 60px 20px;
+    text-transform: uppercase;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $white-color;
+        width: 2px;
+        height: 30px;
+        bottom: 0;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $black-color;
+        width: 2px;
+        height: 30px;
+        bottom: -30px;
+    }
+}
+
+// Section Title
+.section-title {
+    font-family: $title-font;
+    font-weight: bold;
+    color: $black-color;
+    line-height: 1.88;
+    font-size: 29px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 // Parts
 @import "header";
 @import "home";
+@import "how";
 @import "footer";

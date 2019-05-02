@@ -93,10 +93,10 @@ var Messenger = function(el){
 console.clear();
 
 // Run scripts, when page loaded
-window.onload = function () {
-    console.log('test');
-    var messenger = new Messenger(document.getElementById('home-title'));
-}
+// window.onload = function () {
+//     console.log('test');
+//     var messenger = new Messenger(document.getElementById('home-title'));
+// }
 
 // var file = document;
 // var size = file.getsize(); // file size
@@ -112,3 +112,16 @@ window.onload = function () {
 //     }
 // }
 // timeout_trigger();
+
+var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    effect: "coverflow",
+})

@@ -26,5 +26,8 @@
     "gulp-sourcemaps": "^2.1.1",
     "gulp-uglify": "^2.0.0",
     "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "swiper": "^4.5.0"
   }
 }
