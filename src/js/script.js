@@ -134,3 +134,14 @@ function itemActive(elem) {
         }, 500);
     }
 }
+
+// Hamburger menu
+$('.Hamburger').click( function () {
+    $(this).toggleClass('active');
+    $('#mobile-menu').fadeToggle().css("display", "flex");
+});
+
+$('#open-role-menu').click( function () {
+    $('#mobile-nav').toggleClass('role-active');
+    $('#role-menu').fadeToggle();
+});
