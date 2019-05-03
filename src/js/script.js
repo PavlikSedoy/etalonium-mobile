@@ -93,26 +93,12 @@ var Messenger = function(el){
 console.clear();
 
 // Run scripts, when page loaded
-// window.onload = function () {
-//     console.log('test');
-//     var messenger = new Messenger(document.getElementById('home-title'));
-// }
+window.onload = function () {
+    // console.log('test');
+    var messenger = new Messenger(document.getElementById('home-title'));
+}
 
-// var file = document;
-// var size = file.getsize(); // file size
-//
-// function timeout_trigger() {
-//     var loaded = file.getLoaded(); // loaded part
-//     p = parseInt(loaded / size);
-//
-//     // $(".progress").css("max-width",p+"%");
-//     $(".progress-view").text(p+"%");
-//     if(p!=100) {
-//         setTimeout('timeout_trigger()', 20);
-//     }
-// }
-// timeout_trigger();
-
+// Home slider
 var mySwiper = new Swiper ('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
@@ -124,4 +110,27 @@ var mySwiper = new Swiper ('.swiper-container', {
         prevEl: '.swiper-button-prev',
     },
     effect: "coverflow",
-})
+});
+
+// Add active class to item
+function itemActive(elem) {
+    if (!$(elem).hasClass('active')) {
+        var item = document.getElementsByClassName('roule__item');
+
+        for (i = 0; i < item.length; i++) {
+            // Remove the class 'active' if it exists
+            item[i].classList.remove('active');
+        }
+
+        elem.classList.add('active');
+
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(elem).offset().top - 55
+        }, 500);
+    } else {
+        $(elem).removeClass('active');
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(elem).parent().offset().top - 55
+        }, 500);
+    }
+}

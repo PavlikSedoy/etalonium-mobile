@@ -25,6 +25,112 @@
     height: 140px;
     width: 100%;
     position: relative;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+
+    &.active {
+      height: calc( 100vh - 95px );
+      background-color: $color-red-etl;
+      //position: fixed;
+      //top: 55px;
+      //left: 10px;
+      //width: calc(100% - 20px);
+      //z-index: 3;
+
+      .roule__img {
+        opacity: 1;
+        height: 290px;
+        top: auto;
+        bottom: 0;
+        left: -50px;
+        filter: grayscale(0%);
+      }
+
+      .roule__imgs {
+        overflow: visible;
+        top: auto;
+        bottom: 0;
+      }
+
+      .roule__head-title {
+        top: 80px;
+        left: 23px;
+      }
+
+      .roule__bg-title {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .roule__back-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background-color: $black-color;
+        color: $white-color;
+        font-family: $title-font;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        padding-left: 60px;
+        opacity: 1;
+        visibility: visible;
+        z-index: 3;
+        
+        &:before {
+          content: '';
+          position: absolute;
+          left: 25px;
+          top: 14px;
+          width: 17px;
+          height: 12px;
+          background-image: url('../img/back-icon.svg');
+        }
+      }
+
+      .roule__text {
+        position: absolute;
+        top: 119px;
+        left: 23px;
+        width: 313px;
+        font-family: $paragraph-font;
+        font-size: 14px;
+        color: $white-color;
+        line-height: 1.83;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .roule__more {
+        position: absolute;
+        top: 290px;
+        left: 23px;
+        padding-left: 28px;
+        font-family: $title-font;
+        font-size: 16px;
+        color: $black-color;
+        z-index: 3;
+        opacity: 1;
+        visibility: visible;
+        display: block;
+        height: 20px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 17px;
+          height: 100%;
+          background-image: url('../img/arrow-right.svg');
+          background-size: 100% auto;
+          background-repeat: no-repeat;
+          background-position: 0 30%;
+        }
+      }
+    }
   }
 
   &__model {
@@ -49,25 +155,72 @@
     left: 0;
     top: 0;
     height: 100%;
-    overflow: hidden;
-    width: 160px;
+    //overflow: hidden;
+    //width: 160px;
+    transition: .5s ease-in-out;
   }
 
   &__img {
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    left: -30px;
+    bottom: -25px;
     position: absolute;
-    width: 130px;
     filter: grayscale(100%);
+    height: 170px;
+    opacity: .6;
+    transition: .5s ease-in-out;
   }
 
-  &__shadow-img {
-    left: -8px;
-    top: 50%;
-    transform: translateY(-50%);
+  // Roule titles
+  &__head-title {
     position: absolute;
-    width: 130px;
+    left: 165px;
+    top: 60px;
+
+    &_text {
+      font-family: $title-font;
+      font-weight: bold;
+      letter-spacing: 4.8px;
+      color: $black-color;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      transform: translate(25px, 0);
+      right: 0;
+      background-image: url('../img/arrow-rigtht-role.svg');
+      background-position: 10px 3px;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 30px;
+    }
   }
 
+  &__bg-title {
+    position: absolute;
+    right: -13px;
+    bottom: -8px;
+    font-family: $title-font;
+    font-weight: bold;
+    letter-spacing: 10.8px;
+    color: rgba($white-color, .4);
+    font-size: 36px;
+    text-transform: uppercase;
+    transition: .5s ease-in-out;
+  }
+
+  &__text, &__back-btn, &__more {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s ease-in-out;
+  }
+
+  &__more {
+    text-decoration: none;
+    transition: .5s ease-in-out;
+  }
 }
