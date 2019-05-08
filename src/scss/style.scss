@@ -67,10 +67,11 @@ main {
     font-family: $title-font;
     font-weight: bold;
     color: $black-color;
-    line-height: 1.88;
+    line-height: 1.6;
     font-size: 29px;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
+    margin-left: 20px;
 }
 
 // Parts
@@ -79,3 +80,4 @@ main {
 @import "how";
 @import "roule";
 @import "footer";
+@import "contacts";

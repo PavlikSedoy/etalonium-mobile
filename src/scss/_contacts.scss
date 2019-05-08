@@ -1,0 +1,56 @@
+.contacts {
+  position: relative;
+  padding-top: 25px;
+
+  &__title {
+    margin-top: 80px;
+  }
+
+  // Item
+  &__item {
+    margin-top: 45px;
+    margin-left: 44px;
+
+    &_title {
+      font-size: 18px;
+      font-family: 'Graphik', sans-serif;
+      font-weight: 600;
+      color: $black-color;
+      text-transform: uppercase;
+    }
+
+    &_ul {
+      margin-top: 15px;
+      list-style-type: none;
+    }
+
+    &_a {
+      height: 35px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    &_address-text {
+      margin-left: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      color: rgb(92, 92, 92);
+    }
+  }
+
+  &__btn {
+    display: block;
+    border: none;
+    border-radius: 0;
+    background-color: $color-red-etl;
+    color: $white-color;
+    font-size: 26px;
+    font-family: 'Graphik', sans-serif;
+    font-weight: 600;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: 60px;
+  }
+}
