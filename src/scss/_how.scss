@@ -16,7 +16,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 490px;
+    height: 310px;
+    padding-bottom: 120px;
 
     &.model-page {
       height: 600px;
@@ -44,7 +45,7 @@
   &__slide-text {
     padding-left: 20px;
     padding-right: 20px;
-    //margin-top: 30px;
+    margin-top: 20px;
 
     p {
       font-family: $paragraph-font;
@@ -97,7 +98,7 @@
     height: 50px;
     background-color: $black-color;
     position: absolute;
-    bottom: 224px;
+    bottom: 15px;
     top: auto;
     margin-top: 0;
     transition: .3s ease-in-out;
@@ -114,13 +115,32 @@
   }
 
   .swiper-button-next {
-    right: 0;
+    right: auto;
+    left: 49px;
     background-image: url('../img/arrow-right.svg');
   }
 
   .swiper-button-prev {
-    right: 50px;
-    left: auto;
+    right: auto;
+    left: 0px;
     background-image: url('../img/arrow-left.svg');
   }
+}
+
+//.fashion-maker .how .swiper-button-prev, .fashion-maker .how .swiper-button-next {
+//  bottom: 318px;
+//}
+
+.fashion-maker .how .swiper-slide, .model .how .swiper-slide, .agent .how .swiper-slide, .producer .how .swiper-slide {
+  padding-bottom: 0;
+}
+
+.fashion-maker .how .swiper-button-next, .model .how .swiper-button-next, .agent .how .swiper-button-next, .producer .how .swiper-button-next {
+  left: auto;
+  right: 0;
+}
+
+.fashion-maker .how .swiper-button-prev, .model .how .swiper-button-prev, .agent .how .swiper-button-prev, .producer .how .swiper-button-prev {
+  left: auto;
+  right: 49px;
 }
