@@ -144,7 +144,7 @@ $('.roule__back-btn').click( function (e) {
     e.stopImmediatePropagation();
     $(this).parent().removeClass('active');
     setTimeout(function () {
-        $(this).parent().removeClass('z3');
+        $('.roule__item').removeClass('z3');
     }, 500);
 });
 
