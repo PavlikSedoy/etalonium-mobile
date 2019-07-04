@@ -150,9 +150,11 @@
 .fashion-maker .how .swiper-button-next, .model .how .swiper-button-next, .agent .how .swiper-button-next, .producer .how .swiper-button-next {
   left: auto;
   right: 0;
+  transform: translateZ(10px);
 }
 
 .fashion-maker .how .swiper-button-prev, .model .how .swiper-button-prev, .agent .how .swiper-button-prev, .producer .how .swiper-button-prev {
   left: auto;
   right: 49px;
+  transform: translateZ(10px);
 }
