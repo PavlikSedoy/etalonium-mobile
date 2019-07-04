@@ -123,25 +123,155 @@ function itemActive(elem) {
         }
 
         elem.classList.add('active');
+        //
+        // $([document.documentElement, document.body]).animate({
+        //     scrollTop: $(elem).offset().top - 55
+        // }, 500);
 
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $(elem).offset().top - 55
-        }, 500);
+        //  Scroll to start roules block
+        controller.scrollTo('#roule-list');
     } else {
-        $(elem).removeClass('active');
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $(elem).parent().offset().top - 55
-        }, 500);
+        // $(elem).removeClass('active');
+        // $([document.documentElement, document.body]).animate({
+        //     scrollTop: $(elem).parent().offset().top - 55
+        // }, 500);
     }
 }
 
+// Remove Active class from item
+$('.roule__back-btn').click( function (e) {
+    e.stopImmediatePropagation();
+    $(this).parent().removeClass('active');
+});
+
 // Hamburger menu
-$('.Hamburger').click( function () {
+$('.Hamburger').add('.mobile-menu__link').click( function () {
     $(this).toggleClass('active');
     $('#mobile-menu').fadeToggle().css("display", "flex");
+});
+
+$('.mobile-menu__link').click( function () {
+    $('.Hamburger').removeClass('active');
 });
 
 $('#open-role-menu').click( function () {
     $('#mobile-nav').toggleClass('role-active');
     $('#role-menu').fadeToggle();
+});
+
+
+// import * as ScrollMagic from "scrollmagic";
+// import { TweenMax, TimelineMax } from "gsap";
+// import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+//
+// ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+
+var tl = new TimelineMax({onUpdate:updatePercentage}),
+    tl2 = new TimelineMax({}),
+    tl3 = new TimelineMax({}),
+    tl4 = new TimelineMax({}),
+    tl5 = new TimelineMax({}),
+    tl6 = new TimelineMax({})
+
+const controller = new ScrollMagic.Controller()
+// const controller2 = new ScrollMagic.Controller()
+
+tl.from("#social-title", .5, {x:100, opacity:0}, '=0')
+
+tl2.from('.how__title', .5, {y:30, opacity:0})
+
+tl3.from('.how__slide-header', .5, {opacity:0})
+    .from('.how__slide-text', .5, {y:30, opacity:0}, .3)
+    // .from('.swiper-button-prev', .5, {opacity:0}, .6)
+    // .from('.swiper-button-next', .5, {opacity:0}, .9)
+
+tl4.from('#roule-white-title', .5, {x:100, opacity:0})
+    .from('.roule-white-title-first', .5, {x:100, opacity:0}, .7)
+    .from('.roule-white-title-second', .5, {x:100, opacity:0}, 1)
+    .from('.roule-white-title-third', .5, {x:100, opacity:0}, 1.3)
+
+tl5.from('.roule__title', .5, {y:30, opacity:0})
+
+tl6.staggerFrom('.roule__item', .5, {x:'100%', opacity:0}, .3)
+    //
+    // .from('.roule__creative', .5, {x:'100%', opacity:0}, .3)
+    // .from('.roule__agent', .5, {x:'100%', opacity:0}, .6)
+    // .from('.roule__producer', .5, {x:'100%', opacity:0}, .9)
+
+const scene = new ScrollMagic.Scene({
+    triggerElement: ".how__transition-title",
+    offset: -80,
+    // triggerHook: "onEnter",
+    // duration: "100%"
+})
+    // .setPin("#social-title")
+    .setTween(tl)
+    .addTo(controller)
+
+const scene2 = new ScrollMagic.Scene({
+    triggerElement: ".how",
+    offset: 150
+})
+    .setTween(tl2)
+    .addTo(controller)
+
+const scene3 = new ScrollMagic.Scene({
+    triggerElement: ".how",
+    offset: 250
+})
+    .setTween(tl3)
+    .addTo(controller)
+
+const scene4 = new ScrollMagic.Scene({
+    triggerElement: ".roule__transition-title",
+    offset: -80
+})
+    .setTween(tl4)
+    .addTo(controller)
+
+const scene5 = new ScrollMagic.Scene({
+    triggerElement: ".roule",
+    offset: 350
+})
+    .setTween(tl5)
+    .addTo(controller)
+
+const scene6 = new ScrollMagic.Scene({
+    triggerElement: ".roule__list",
+    offset: -50
+})
+    .setTween(tl6)
+    .addTo(controller)
+
+function updatePercentage() {
+    tl.progress()
+}
+
+controller.scrollTo(function(target) {
+
+    TweenMax.to(window, 0.5, {
+        scrollTo : {
+            y : target - 55, // scroll position of the target along y axis
+            autoKill : true // allows user to kill scroll action smoothly
+        },
+        ease : Cubic.easeInOut
+    });
+
+});
+
+$(document).click("a[href^=#]", function(e) {
+    var id = $(e.target).attr('href');
+
+    if($(id).length > 0) {
+        e.preventDefault();
+
+        // trigger scroll
+        controller.scrollTo(id);
+
+        // If supported by the browser we can also update the URL
+        if (window.history && window.history.pushState) {
+            history.pushState("", document.title, id);
+        }
+    }
+
 });

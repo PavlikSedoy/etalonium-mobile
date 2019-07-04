@@ -11,6 +11,16 @@
     margin-top: 45px;
     margin-left: 44px;
 
+    &_li {
+      &:first-child {
+        display: none;
+      }
+
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+
     &_title {
       font-size: 18px;
       font-family: 'Graphik', sans-serif;

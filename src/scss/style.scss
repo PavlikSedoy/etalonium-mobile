@@ -9,11 +9,13 @@
 
 html {
     font-size: 14px;
+    overflow-x: hidden;
 }
 
 body {
     background-color: $layout-bg;
     font-family: $paragraph-font;
+    overflow-x: hidden;
 }
 
 main {

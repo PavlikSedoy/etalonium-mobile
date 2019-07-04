@@ -1,9 +1,18 @@
 .how {
   position: relative;
+  overflow-x: hidden;
 
   // Title
   &__title {
     margin-top: 80px;
+  }
+
+  &__transition-title {
+    //height: 190px;
+    //overflow-x: hidden;
+    span {
+      display: block;
+    }
   }
 
   // Slider
@@ -15,8 +24,8 @@
     padding-top: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 310px;
+    justify-content: flex-start;
+    height: 350px;
     padding-bottom: 120px;
 
     &.model-page {
@@ -27,6 +36,7 @@
   &__slide-header {
     display: flex;
     align-items: center;
+    min-height: 50px;
 
     &_title {
       font-family: $title-font;
@@ -116,13 +126,13 @@
 
   .swiper-button-next {
     right: auto;
-    left: 49px;
+    left: 69px;
     background-image: url('../img/arrow-right.svg');
   }
 
   .swiper-button-prev {
     right: auto;
-    left: 0px;
+    left: 20px;
     background-image: url('../img/arrow-left.svg');
   }
 }
