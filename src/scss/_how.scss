@@ -143,6 +143,8 @@
 
 .fashion-maker .how .swiper-slide, .model .how .swiper-slide, .agent .how .swiper-slide, .producer .how .swiper-slide {
   padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .fashion-maker .how .swiper-button-next, .model .how .swiper-button-next, .agent .how .swiper-button-next, .producer .how .swiper-button-next {

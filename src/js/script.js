@@ -123,6 +123,7 @@ function itemActive(elem) {
         }
 
         elem.classList.add('active');
+        elem.classList.add('z3');
         //
         // $([document.documentElement, document.body]).animate({
         //     scrollTop: $(elem).offset().top - 55
@@ -142,6 +143,9 @@ function itemActive(elem) {
 $('.roule__back-btn').click( function (e) {
     e.stopImmediatePropagation();
     $(this).parent().removeClass('active');
+    setTimeout(function () {
+        $(this).parent().removeClass('z3');
+    }, 500);
 });
 
 // Hamburger menu
