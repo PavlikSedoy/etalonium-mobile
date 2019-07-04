@@ -178,8 +178,6 @@
 .mobile-menu {
   position: fixed;
   top: 55px;
-  left: 10px;
-  width: calc(100% - 20px);
   height: calc(100% - 95px);
   background-color: $bg-color;
   z-index: 9;
@@ -187,6 +185,8 @@
   padding: 37px 45px 50px 25px;
   flex-direction: column;
   justify-content: space-between;
+  left: 9px;
+  width: calc(100% - 18px);
 
   &__ul {
     list-style-type: none;
