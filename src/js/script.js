@@ -175,7 +175,10 @@ var tl = new TimelineMax({onUpdate:updatePercentage}),
     tl3 = new TimelineMax({}),
     tl4 = new TimelineMax({}),
     tl5 = new TimelineMax({}),
-    tl6 = new TimelineMax({})
+    tl6 = new TimelineMax({}),
+    tl7 = new TimelineMax({}),
+    tl8 = new TimelineMax({}),
+    tl9 = new TimelineMax({})
 
 const controller = new ScrollMagic.Controller()
 // const controller2 = new ScrollMagic.Controller()
@@ -185,7 +188,8 @@ tl.from("#social-title", .5, {x:100, opacity:0}, '=0')
 tl2.from('.how__title', .5, {y:30, opacity:0})
 
 tl3.from('.how__slide-header', .5, {opacity:0})
-    .from('.how__slide-text', .5, {y:30, opacity:0}, .3)
+    .from('.how__slide-text', .5, {y:30}, .3)
+    .from('.how__slide-img_wr', .5, {y:100, opacity:0}, .6)
     // .from('.swiper-button-prev', .5, {opacity:0}, .6)
     // .from('.swiper-button-next', .5, {opacity:0}, .9)
 
@@ -201,6 +205,13 @@ tl6.staggerFrom('.roule__item', .5, {x:'100%', opacity:0}, .3)
     // .from('.roule__creative', .5, {x:'100%', opacity:0}, .3)
     // .from('.roule__agent', .5, {x:'100%', opacity:0}, .6)
     // .from('.roule__producer', .5, {x:'100%', opacity:0}, .9)
+
+tl7.from("#roule-first-shorttitle", .5, {x:100, opacity:0}, '=0')
+
+tl8.from('#roule-second-shourttitle', .5, {x:100, opacity:0}, 0)
+
+tl9.from('.contacts__title', .5, {y:30, opacity:0},)
+    .staggerFrom('.contacts__item', .5, {x:'100%', opacity:0}, .3)
 
 const scene = new ScrollMagic.Scene({
     triggerElement: ".how__transition-title",
@@ -245,6 +256,30 @@ const scene6 = new ScrollMagic.Scene({
     offset: -50
 })
     .setTween(tl6)
+    .addTo(controller)
+
+const scene7 = new ScrollMagic.Scene({
+    triggerElement: ".how__transition-title",
+    offset: -80,
+    // triggerHook: "onEnter",
+    // duration: "100%"
+})
+// .setPin("#social-title")
+    .setTween(tl7)
+    .addTo(controller)
+
+const scene8 = new ScrollMagic.Scene({
+    triggerElement: ".contacts__transition-title",
+    offset: -80
+})
+    .setTween(tl8)
+    .addTo(controller)
+
+const scene9 = new ScrollMagic.Scene({
+    triggerElement: ".roule",
+    offset: 350
+})
+    .setTween(tl9)
     .addTo(controller)
 
 function updatePercentage() {
